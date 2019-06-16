@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       mc:Ignorable="d"
+       xmlns:local="clr-namespace:XfShellDemo.Views"
+       xmlns:control="clr-namespace:XfShellDemo"
+       Title="XfShellDemo"
+       x:Class="XfShellDemo.AppShell"
+       FlyoutHeaderBehavior="CollapseOnScroll">
+
+    <!-- 
+        Styles and Resources 
+    -->
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Color x:Key="NavigationPrimary">#2196F3</Color>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="Shell.ForegroundColor" Value="White" />
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+            </Style>
+            <Style TargetType="ShellItem" BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <Shell.FlyoutHeader>
+        <control:FlyoutHeader />
+    </Shell.FlyoutHeader>
+
+    <!-- Your Pages -->
+
+    <MenuItem Text="before_menu1" />
+    <MenuItem Text="before_menu2" />
+    <MenuItem Text="before_menu3" />
+
+    <FlyoutItem Title="Browse" Icon="tab_feed.png">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:ItemsPage}" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="About" Icon="tab_about.png">
+        <Tab Title="About" Icon="tab_about.png">
+            <ShellContent ContentTemplate="{DataTemplate local:AboutPage}" />
+        </Tab>
+    </FlyoutItem>
+
+    <MenuItem Text="after_menu01" />
+    <MenuItem Text="after_menu02" />
+    <MenuItem Text="after_menu03" />
+    <MenuItem Text="after_menu04" />
+    <MenuItem Text="after_menu05" />
+    <MenuItem Text="after_menu06" />
+    <MenuItem Text="after_menu07" />
+    <MenuItem Text="after_menu08" />
+    <MenuItem Text="after_menu09" />
+    <MenuItem Text="after_menu10" />
+    <MenuItem Text="after_menu11" />
+    <MenuItem Text="after_menu12" />
+
+</Shell>
